@@ -25,7 +25,7 @@ public class SieveTest extends AndroidTestCase {
     public void testConstructor__whenGivenMIN_VALUE__DoesNotThrowIllegalArgumentException() throws Throwable {
         boolean errorThrown;
         try {
-            Sieve out = new Sieve(Sieve.MIN_VALUE);
+            new Sieve(Sieve.MIN_VALUE);
             errorThrown = false;
         }
         catch (IllegalArgumentException e) {
@@ -37,7 +37,7 @@ public class SieveTest extends AndroidTestCase {
     public void testConstructor__whenGivenOneLessThanMIN_VALUE__ThrowsIllegalArgumentException() throws Throwable {
         boolean errorThrown;
         try {
-            Sieve out = new Sieve(Sieve.MIN_VALUE - 1);
+            new Sieve(Sieve.MIN_VALUE - 1);
             errorThrown = false;
         }
         catch (IllegalArgumentException e) {
