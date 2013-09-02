@@ -46,6 +46,21 @@ public class SieveTest extends AndroidTestCase {
         Assert.assertTrue(errorThrown);
     }
 
+    public void testGetPrimes__whenGivenValidMaxValuesInConstructor__returnsExpectedResults() throws Throwable {
+        int[] expected = new int[] { 2, 3, 5, 7, 11, 13, 17, 19 };
+        Sieve sieve = new Sieve( 20 );
+
+        int[] results = sieve.GetPrimes();
+
+        boolean success = expected.length == results.length;
+        if (success) {
+            for (int i=0; success && i<expected.length; i++) {
+                success = expected[i] == results[i];
+            }
+        }
+        Assert.assertTrue(success);
+    }
+
     public void setUp () {
         out = new Sieve();
     }
