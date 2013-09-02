@@ -11,14 +11,14 @@ public class Sieve {
     private final static int PRIME_NO  = 2;
 
     public Sieve () {
-	maxValue = DEFAULT_MAX;
+        maxValue = DEFAULT_MAX;
     }
 
     public Sieve (int newMax) throws Exception {
-	if (newMax < MIN_VALUE) {
-	    throw( new IllegalArgumentException() );
-	}
-	maxValue = newMax;
+        if (newMax < MIN_VALUE) {
+            throw( new IllegalArgumentException() );
+        }
+        maxValue = newMax;
     }
 
     public int[] GetPrimes() {
@@ -29,22 +29,22 @@ public class Sieve {
         int result_count = 0;
 
         for (i=2; i<=maxValue; i++) {
-	    primesData[i] = PRIME_UNKNOWN;
+            primesData[i] = PRIME_UNKNOWN;
         }
         for (i=2; i<=maxValue; i++) {
-	    if (primesData[i] == PRIME_UNKNOWN) {
-		primesData[i] = PRIME_YES;
-		results[result_count++] = i;
-		int j;
-		for (j=i; j<=maxValue; j = j + i) {
-		    primesData[j] = PRIME_NO;
-		}
-	    }
+            if (primesData[i] == PRIME_UNKNOWN) {
+                primesData[i] = PRIME_YES;
+                results[result_count++] = i;
+                int j;
+                for (j=i; j<=maxValue; j = j + i) {
+                    primesData[j] = PRIME_NO;
+                }
+            }
         }
 
         int[] retval = new int[result_count];
         for (i=0; i<result_count; i++) {
-	    retval[i] = results[i];
+            retval[i] = results[i];
         }
         return retval;
     }
