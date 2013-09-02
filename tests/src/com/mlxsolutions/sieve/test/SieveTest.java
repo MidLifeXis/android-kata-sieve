@@ -11,14 +11,14 @@ import com.mlxsolutions.sieve.Sieve;
 public class SieveTest extends AndroidTestCase {
 
     public void testConstructor__whenGivenMaxValue__setsMaxValueToProvidedValue() throws Throwable {
-    	Integer expected = 250;
-    	Sieve sieve = new Sieve(expected);
-    	Assert.assertTrue(sieve.maxValue == expected);
-     }
+        int expected = 250;
+        Sieve sieve = new Sieve(expected);
+        Assert.assertTrue(sieve.maxValue == expected);
+    }
 
-    public void testConstructor__whenNotGivenMaxValue__defaultsTo100() throws Throwable {
-    	Sieve sieve = new Sieve();
+    public void testConstructor__whenNotGivenMaxValue__defaultsToDEFAULT_MAX() throws Throwable {
+        Sieve sieve = new Sieve();
         Assert.assertTrue(sieve.maxValue == 100);
-     }
+    }
 
 }
