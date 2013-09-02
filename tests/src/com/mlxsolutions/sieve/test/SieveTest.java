@@ -22,6 +22,30 @@ public class SieveTest extends AndroidTestCase {
         Assert.assertEquals(Sieve.DEFAULT_MAX, out.maxValue);
     }
 
+    public void testConstructor__whenGivenMIN_VALUE__DoesNotThrowIllegalArgumentException() throws Throwable {
+        boolean errorThrown;
+        try {
+            Sieve out = new Sieve(Sieve.MIN_VALUE);
+            errorThrown = false;
+        }
+        catch (IllegalArgumentException e) {
+            errorThrown = true;
+        }
+        Assert.assertFalse(errorThrown);
+    }
+
+    public void testConstructor__whenGivenOneLessThanMIN_VALUE__ThrowsIllegalArgumentException() throws Throwable {
+        boolean errorThrown;
+        try {
+            Sieve out = new Sieve(Sieve.MIN_VALUE - 1);
+            errorThrown = false;
+        }
+        catch (IllegalArgumentException e) {
+            errorThrown = true;
+        }
+        Assert.assertTrue(errorThrown);
+    }
+
     public void setUp () {
         out = new Sieve();
     }
