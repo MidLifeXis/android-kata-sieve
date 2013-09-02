@@ -15,11 +15,11 @@ public class SieveTest extends AndroidTestCase {
     public void testConstructor__whenGivenMaxValue__setsMaxValueToProvidedValue() throws Throwable {
         int expected = Sieve.DEFAULT_MAX * 2;
         Sieve sieve = new Sieve(expected);
-        Assert.assertTrue(sieve.maxValue == expected);
+        Assert.assertEquals(expected, sieve.maxValue);
     }
 
     public void testConstructor__whenNotGivenMaxValue__defaultsToDEFAULT_MAX() throws Throwable {
-        Assert.assertTrue(out.maxValue == Sieve.DEFAULT_MAX);
+        Assert.assertEquals(Sieve.DEFAULT_MAX, out.maxValue);
     }
 
     public void setUp () {
