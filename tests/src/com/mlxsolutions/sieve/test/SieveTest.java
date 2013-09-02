@@ -10,6 +10,8 @@ import com.mlxsolutions.sieve.Sieve;
  */
 public class SieveTest extends AndroidTestCase {
 
+    private Sieve out;
+
     public void testConstructor__whenGivenMaxValue__setsMaxValueToProvidedValue() throws Throwable {
         int expected = Sieve.DEFAULT_MAX * 2;
         Sieve sieve = new Sieve(expected);
@@ -17,8 +19,14 @@ public class SieveTest extends AndroidTestCase {
     }
 
     public void testConstructor__whenNotGivenMaxValue__defaultsToDEFAULT_MAX() throws Throwable {
-        Sieve sieve = new Sieve();
-        Assert.assertTrue(sieve.maxValue == Sieve.DEFAULT_MAX);
+        Assert.assertTrue(out.maxValue == Sieve.DEFAULT_MAX);
     }
 
+    public void setUp () {
+        out = new Sieve();
+    }
+
+    public void tearDown () {
+        out = null;
+    }
 }
