@@ -28,10 +28,10 @@ public class Sieve {
         int i;
         int result_count = 0;
 
-        for (i=2; i<=maxValue; i++) {
+        for (i=MIN_VALUE; i<=maxValue; i++) {
             primesData[i] = PRIME_UNKNOWN;
         }
-        for (i=2; i<=maxValue; i++) {
+        for (i=MIN_VALUE; i<=maxValue; i++) {
             if (primesData[i] == PRIME_UNKNOWN) {
                 primesData[i] = PRIME_YES;
                 results[result_count++] = i;
